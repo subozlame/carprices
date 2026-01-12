@@ -126,7 +126,6 @@ http://localhost:8501
 
 🔗Reference
 
-[![YouTube](https://img.shields.io/badge/YouTube-Video-red?logo=youtube)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)  KothaEd
+[![YouTube](https://img.shields.io/badge/YouTube-Video-red?logo=youtube)](https://youtu.be/MFKSPGo_MLw)  KothaEd
 
-  Link To video : <a href="https://youtu.be/MFKSPGo_MLw" target="_blank"></a>
 

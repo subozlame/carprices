@@ -2,11 +2,16 @@ import pandas as pd
 import numpy as np
 import pickle as pk
 import streamlit as st
+from PIL import Image
 
 # Load trained model
 model = pk.load(open('model.pkl', 'rb'))
 
-st.header('Car Price Prediction ML Model')
+
+
+# App title
+
+st.header('Cars Price Prediction')
 
 # Load dataset
 cars_data = pd.read_csv('Cardetails.csv')
@@ -30,16 +35,28 @@ owner = st.selectbox('Owner type', cars_data['owner'].unique())
 mileage = st.slider('Car Mileage', 10, 40)
 engine = st.slider('Engine CC', 700, 5000)
 max_power = st.slider('Max Power', 0, 200)
-seats = st.slider('No of Seats', 5, 10)
+seats = st.slider('No of Seats', 2, 10)
 
 # Conversion rate from INR to NPR (approximate)
 INR_TO_NPR = 1.6  # 1 INR ≈ 1.6 NPR, adjust as needed
 
 # Programmer Info in sidebar
+logo = Image.open('logo.png') 
+col1, col2, col3 = st.sidebar.columns([1,2,1])  # middle column is bigger
+with col2:
+    st.image(logo, width=100) 
+
 st.sidebar.markdown(
     """
-    <div style="text-align: center; margin-top: 20px;">
-        <p style="font-size:14px; color:gray;">KCE081BCT043<br>Subodh Madai</p>
+    <div style="text-align: center; margin-top: 10px; font-size: 12px; color: gray;">
+        KCE081BCT043<br>Subodh Madai
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+st.sidebar.markdown(
+    """
+    <div style="text-align: center; margin-top: 5px;">
     </div>
     """,
     unsafe_allow_html=True

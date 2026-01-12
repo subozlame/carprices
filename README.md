@@ -130,8 +130,5 @@ http://localhost:8501
 
 - Use latest Python version (3.8 or above recommended)
 
-🔗Reference
-
-[![YouTube](https://img.shields.io/badge/YouTube-Video-red?logo=youtube)](https://youtu.be/MFKSPGo_MLw)  KothaEd
 
 

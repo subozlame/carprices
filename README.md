@@ -4,25 +4,31 @@ This project predicts car prices using Machine Learning techniques in Python.
 It uses a dataset of car details and trains a regression model to estimate the selling price based on input features.
 
 
-📂 Project Files
+📂 **Project Files**
+
 | File Name        | Description                                           |
-| --------------     ----------------------------------------------------- |
+|------------------|-------------------------------------------------------|
 | Cardetails.csv   | Dataset containing car information                    |
 | app.py           | Streamlit web application                             |
 | dataset.ipynb    | Jupyter notebook for data analysis and model training |
 | requirements.txt | Download the requirements for the program             |
 
+---
 
-📂 File Structure
+📂 **File Structure**
 
+```
 Project_Title/
-  -venv/...
-  -app.py
-  -Cardetails.csv
-  -dataset.ipynb
-  -model.pkl(Auto generated During the process)
-  -requirements.txt (Contains the requirements)
-  -run.txt (Run the app using streamlit)
+│
+├── venv/
+│   └── ...
+├── app.py
+├── Cardetails.csv
+├── dataset.ipynb
+├── model.pkl                # Auto-generated during the process
+├── requirements.txt         # Contains the requirements
+└── run.txt                  # Run the app using Streamlit
+```
 
 
 📦 Virtual Environment Setup (env)

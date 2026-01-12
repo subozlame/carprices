@@ -118,12 +118,15 @@ http://localhost:8501
 
 📝 Notes
 
-> Ensure the dataset file (CarDetails.csv) is in the same directory as app.py
+- Ensure the dataset file (CarDetails.csv) is in the same directory as app.py
 
-> Activate the virtual environment every time before running the app
+- Activate the virtual environment every time before running the app
 
-> Use latest Python version (3.8 or above recommended)
+- Use latest Python version (3.8 or above recommended)
 
+🔗Reference
 
+[![YouTube](https://img.shields.io/badge/YouTube-Video-red?logo=youtube)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)  KothaEd
 
+  Link To video : <a href="https://youtu.be/MFKSPGo_MLw" target="_blank"></a>
 

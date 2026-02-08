@@ -8,7 +8,6 @@ from PIL import Image
 model = pk.load(open('model.pkl', 'rb'))
 
 
-
 # App title
 
 st.header('Cars Price Prediction')
@@ -17,9 +16,12 @@ st.header('Cars Price Prediction')
 cars_data = pd.read_csv('Cardetails.csv')
 
 # Function to extract brand name
+
+
 def get_brand_name(car_name):
     car_name = car_name.split(' ')[0]
     return car_name.strip()
+
 
 # Preprocess dataset
 cars_data['name'] = cars_data['name'].apply(get_brand_name)
@@ -30,7 +32,8 @@ year = st.slider('Car Manufactured Year', 1994, 2024)
 km_driven = st.slider('No of kms Driven', 11, 200000)
 fuel = st.selectbox('Fuel type', cars_data['fuel'].unique())
 seller_type = st.selectbox('Seller type', cars_data['seller_type'].unique())
-transmission = st.selectbox('Transmission type', cars_data['transmission'].unique())
+transmission = st.selectbox(
+    'Transmission type', cars_data['transmission'].unique())
 owner = st.selectbox('Owner type', cars_data['owner'].unique())
 mileage = st.slider('Car Mileage', 10, 40)
 engine = st.slider('Engine CC', 700, 5000)
@@ -41,10 +44,10 @@ seats = st.slider('No of Seats', 2, 10)
 INR_TO_NPR = 1.6  # 1 INR ≈ 1.6 NPR, adjust as needed
 
 # Programmer Info in sidebar
-logo = Image.open('logo.png') 
-col1, col2, col3 = st.sidebar.columns([1,2,1])  # middle column is bigger
+logo = Image.open('subodh.png')
+col1, col2, col3 = st.sidebar.columns([1, 2, 1])  # middle column is bigger
 with col2:
-    st.image(logo, width=100) 
+    st.image(logo, width=100)
 
 st.sidebar.markdown(
     """
@@ -74,7 +77,8 @@ if st.button("Predict"):
 
     # Encode categorical values
     input_data_model['owner'].replace(
-        ['First Owner', 'Second Owner', 'Third Owner', 'Fourth & Above Owner', 'Test Drive Car'],
+        ['First Owner', 'Second Owner', 'Third Owner',
+            'Fourth & Above Owner', 'Test Drive Car'],
         [1, 2, 3, 4, 5], inplace=True
     )
     input_data_model['fuel'].replace(
@@ -99,10 +103,12 @@ if st.button("Predict"):
     predicted_price_in_inr = model.predict(input_data_model)[0]
 
     # Clip negative or unrealistically low prices
-    predicted_price_in_inr = max(predicted_price_in_inr, 50000)  # Minimum realistic price
+    predicted_price_in_inr = max(
+        predicted_price_in_inr, 50000)  # Minimum realistic price
 
     # Convert to Nepali Rupees
     predicted_price_in_npr = predicted_price_in_inr * INR_TO_NPR
 
     # Display prediction neatly
-    st.success(f"**Predicted Car Price:** ₹{predicted_price_in_inr:,.0f} (INR) ≈ NPR {predicted_price_in_npr:,.0f}")
+    st.success(
+        f"**Predicted Car Price:** ₹{predicted_price_in_inr:,.0f} (INR) ≈ NPR {predicted_price_in_npr:,.0f}")
